@@ -1,0 +1,120 @@
+<html ng-app='calculatorApp'>
+
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="script/angular.js"></script>
+    <script src="script/app.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4 custom-align" ng-controller="CalculatorController as main">
+                <form name="frm">
+                <!--RESULT DISPLAY-->
+                <div class="row">
+                    <div class="col-xs-12 custom-operations">
+                        <span ng-show="main.result"></span>
+
+
+                            <div class="alert alert-success" ng-show="frm.input.$valid" ng-if="!main.expressionError">
+                                <strong>Ans:<strong> {{ main.result }}
+                            </div>
+
+                            <div class="alert alert-danger" ng-hide="frm.input.$valid">
+                                <strong>ERROR!</strong> Only numerical value
+                            </div>
+
+                            <div class="alert alert-danger" ng-show="main.expressionError">
+                                <strong>ERROR!</strong> {{ main.expressionError }}
+                            </div>
+                        <!--<input type="text" ng-model="main.input2" class="form-control"></input>-->
+                    </div>
+                </div>
+                <!--RESULT DISPLAY-->
+                <!--OPERATIONS DISPLAY-->
+                <div class="row">
+                    <div class="col-xs-12 custom-operations">
+                        <input type="text" ng-model="main.enteredNumber" class="form-control input-lg"
+                        ng-pattern="main.regex" name="input" ng-disabled="true"></input> 
+                        <hr>
+                        <p style="margin-top:2px;"> = <span ng-hide "main.expression == '' " class="check-element animate-show-hide"> {{ main.expression }} </span></p>
+                        <hr style="margin-top:2px !important;">
+                    </div>
+                    
+                </div>
+                <!--OPERATIONS DISPLAY-->
+
+                <!--NUMERICALS AND OPERATORS DISPLAY-->
+                <div class="row">
+                    <div class="col-xs-7 btn-numbers">
+                        <button ng-repeat="number in main.numbers" ng-click="main.buttonClicked(number)" class="btn btn-default btn-lg">{{number}}</button>
+                    </div>
+                    <div class="col-xs-5 padding-0 btn-operations">
+                        <button ng-repeat="symbol in main.operations" ng-click="main.buttonClicked(symbol)" class="btn btn-default btn-lg">{{symbol}}</button>
+                    </div>
+                </div>
+                <!--NUMERICALS AND OPERATORS DISPLAY-->
+
+                <!--0 . = -->
+                <div class="row">
+                    <div class="col-xs-7 btn-custom-1">
+                        <button class="btn btn-danger btn-lg" ng-click="main.buttonClicked('C')">C</button>
+                        <button class="btn btn-default btn-lg" ng-click="main.buttonClicked('0')">0</button>
+                        <button class="btn btn-default btn-lg" ng-click="main.buttonClicked('.')">.</button>
+                    </div>
+                    <div class="col-xs-5 padding-0">
+                        <button class="btn btn-primary btn-block btn-lg"  ng-click="main.calculate()"
+                        ng-disabled='!frm.input.$valid '>=</button>
+                    </div>
+                </div>
+                <!--0 . = -->
+            
+                </form>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+    <!--
+
+    <p ng-if="false">Good MOrning</p>
+
+    <div >
+
+        <form action="">
+
+            <input type="text" ng-model="user">
+        </form>
+
+        <p>THe value is {{hourOfDay}} </p>
+        <button ng-click="updateSomething()">Update</button>
+
+
+        <button ng-model="addition" value="+" ng-click="updateSomething()">+</button>
+        <p> Button Val : {{addition}} </p>
+
+        <button ng-repeat="button in buttons">{{ button }}</button>
+    </div>
+
+
+    <hr>
+    <div >
+        <button ng-repeat="numericButton in buttons" ng-click="buttonClicked(numericButton)">
+                {{ numericButton }} 
+        </button>
+    </div>-->
+
+
+</body>
+
+
+</html>

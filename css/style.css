@@ -1,0 +1,70 @@
+
+.container { width: 500px !important; }
+
+.row{
+	margin: 0;
+	padding:0;
+}
+.custom-align{
+    position: absolute;
+		height: 469px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 25px;
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+		padding-right:0px;
+		padding-left:33px;
+		width : 450px !important;
+
+
+}
+
+.custom-operations{
+	width: 91%;
+}
+.btn-operations button{
+	width: 45%;
+	margin:3px;	
+}
+
+.btn-numbers button{
+	width: 30%;
+	margin:3px;
+}
+
+.btn-custom-1 button{
+	width: 30%;
+	margin-top: 3px;
+    margin-right: 3px;
+    margin-left: 1px;
+}
+
+.padding-0{
+    margin-left:-30px;
+}
+
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 1s;
+}
+
+.check-element {
+  opacity: 1;
+  padding: 10px;
+}
+
+.form-control[disabled], fieldset[disabled] .form-control {
+    cursor: hand !important;
+	background-color: white !important;
+	letter-spacing: 2px;
+}
