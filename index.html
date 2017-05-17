@@ -56,7 +56,8 @@
                         <button ng-repeat="number in main.numbers" ng-click="main.buttonClicked(number)" class="btn btn-default btn-lg">{{number}}</button>
                     </div>
                     <div class="col-xs-5 padding-0 btn-operations">
-                        <button ng-repeat="symbol in main.operations" ng-click="main.buttonClicked(symbol)" class="btn btn-default btn-lg">{{symbol}}</button>
+                        <button ng-repeat="symbol in main.operations" ng-click="main.buttonClicked(symbol)" 
+                        ng-disabled='!frm.input.$valid 'class="btn btn-default btn-lg">{{symbol}}</button>
                     </div>
                 </div>
                 <!--NUMERICALS AND OPERATORS DISPLAY-->
@@ -84,34 +85,6 @@
 
     </div>
 
-    <!--
-
-    <p ng-if="false">Good MOrning</p>
-
-    <div >
-
-        <form action="">
-
-            <input type="text" ng-model="user">
-        </form>
-
-        <p>THe value is {{hourOfDay}} </p>
-        <button ng-click="updateSomething()">Update</button>
-
-
-        <button ng-model="addition" value="+" ng-click="updateSomething()">+</button>
-        <p> Button Val : {{addition}} </p>
-
-        <button ng-repeat="button in buttons">{{ button }}</button>
-    </div>
-
-
-    <hr>
-    <div >
-        <button ng-repeat="numericButton in buttons" ng-click="buttonClicked(numericButton)">
-                {{ numericButton }} 
-        </button>
-    </div>-->
 
 
 </body>
